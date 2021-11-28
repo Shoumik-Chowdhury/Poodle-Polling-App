@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>A question for drag and drop ranking. Allows respondents to rank items against each other by placing them in order of preference. Is appropriate for short lists (e.g. 5-7 items). Is optimized for use with keyboard (Tab, Shift-Tab, and Up/Down arrow keys) and under mobile devices., jQuery Survey Library Example</title><meta name="viewport" content="width=device-width"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.8.79/survey.jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="other.js"></script> -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="./index.css"> -->
+    </head>
+    <body>
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+    </body>
+    <script>
+        Survey
+  .StylesManager
+  .applyTheme("bootstrap");
+Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
+
+let json = {
+  "elements": [
+    {
+      "type": "ranking",
+      "name": "decision_maker",
+      "title": "Please rank your decisions from highest to lowest priority:",
+      "isRequired": true,
+      "choices": [
+      ]
+    }]
+};
+
+// Sample data, eventually will come from database.
+const thing = [{choices: "Chess",}, {choices: "Swim",}, {choices: "Run",}, {choices: "Eat",}]
+
+thing.forEach(choice => {
+  json.elements[0]["choices"].push(choice.choices);
+});
+
+window.survey = new Survey.Model(json);
+
+survey
+  .onComplete
+  .add(function(sender) {
+    $.ajax({
+    type: "POST",
+    url: "http://localhost:8080/poll",
+    data: JSON.stringify(sender.data)
+    });
+
+    document
+      .querySelector('#surveyResult')
+      .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+  });
+
+$("#surveyElement").Survey({model: survey});
+
+    </script>
+</html>
