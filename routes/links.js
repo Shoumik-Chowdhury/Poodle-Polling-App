@@ -11,7 +11,6 @@ const router = express.Router();
 
 module.exports = (db) => {//passed to server.js
   return router.post("/", (req, res) => {
-    console.log('here')
 
     const generateRandomString = () => {
       return Math.floor((1 + Math.random()) * 0x1000000).toString(16).substring(1);
@@ -40,43 +39,3 @@ module.exports = (db) => {//passed to server.js
   });
 };
 
-
-
-// const pg = require('pg');
-// const { Pool } = require('pg');
-// const properties = require('./json/properties.json');
-// const users = require('./json/users.json');
-
-
-// const pool = new Pool({
-//   user: 'vagrant',
-//   password: '123',
-//   host: 'localhost',
-//   database: 'lightbnb'
-// });
-
-// const addPoll = function(poll) {
-//   const generateRandomString = () => {
-//     return Math.floor((1 + Math.random()) * 0x1000000).toString(16).substring(1);
-//   };
-//   //generate 2 links
-//   const link1admin = generateRandomString();
-//   const link2everyone = generateRandomString();
-
-//   return pool
-//     .query(`
-//     INSERT INTO users (
-//       name, email, password) 
-//       VALUES (
-//       $1, $2, $3, ${link1admin}, ${link2everyone})
-//       RETURNING *;
-//       `, [poll.email, poll.title, poll.description])
-//     .then(result => {
-//       return result.rows[0];
-//     })
-//     .catch(err => {
-//       return null;
-//     });
-
-// };
-// exports.addPoll = addPoll;
