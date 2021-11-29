@@ -5,17 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- External HTML -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <!-- Global variables -->
+  <script>
+    let result = <%- JSON.stringify(result) %>;
+    let title = <%- JSON.stringify(title) %>;
+    let email = <%- JSON.stringify(email) %>;
+  </script>
   <!-- External scripts -->
-  <script src="../public/scripts/results.js"></script>
+  <script src="/scripts/poll_results.js"></script>
 
   <title>Results</title>
 </head>
 <body>
   <h2>Result</h2>
-  <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-  <div></div>
+  <div id="myChart" style="max-width:700px; height:400px"></div>
 </body>
 </html>
