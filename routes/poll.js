@@ -18,7 +18,14 @@ module.exports = (db) => {//passed to server.js
         }
       });
     };
-    console.log(optionArray);
+
+    optionArray.forEach(element => {
+      db.query(`
+      UPDATE option_results
+      SET option_value = $1
+      WHERE id = $2;
+      `, [element.option_value, element.id])
+    });
 
   });
 };
