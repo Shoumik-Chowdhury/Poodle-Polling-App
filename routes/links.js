@@ -12,7 +12,7 @@ const router = express.Router();
 module.exports = (db) => {//passed to server.js
 
   return router.post("/", (req, res) => {
-    const allOptions = [req.body.option1, req.body.option2, req.body.option3];
+    const allOptions = [req.body.option1, req.body.option2, req.body.option3, req.body.option4, req.body.option5, req.body.option6, req.body.option7, req.body.option8];
     const arrayOfOptions = allOptions.filter((option) => option.length > 0);
 
     //HELPER FUNCTION
