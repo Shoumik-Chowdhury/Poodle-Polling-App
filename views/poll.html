@@ -32,10 +32,10 @@ let json = {
 };
 
 // Sample data, eventually will come from database.
-const thing = [{choices: "Chess",}, {choices: "Swim",}, {choices: "Run",}, {choices: "Eat",}]
+const thing = [{id: 1, poll_id: 1, option_name: "Hiking", option_value: 11}, {id: 2, poll_id: 1, option_name: "Biking", option_value: 6}, {id: 3, poll_id: 1, option_name: "Go Karting", option_value: 15}, {id: 4, poll_id: 1, option_name: "Organized Crime", option_value: 1}]
 
 thing.forEach(choice => {
-  json.elements[0]["choices"].push(choice.choices);
+  json.elements[0]["choices"].push(choice.option_name);
 });
 
 window.survey = new Survey.Model(json);
@@ -46,7 +46,7 @@ survey
     $.ajax({
     type: "POST",
     url: "http://localhost:8080/api/poll",
-    data: sender.data
+    data: {rank: sender.data, optionEntry: thing}
     });
 
     document
