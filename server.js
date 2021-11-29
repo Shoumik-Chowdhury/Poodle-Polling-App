@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
+const path = require('path');
 const morgan = require("morgan");
 
 // PG database client/connection setup
@@ -38,12 +39,14 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const links = require("./routes/links");//fetching from link.js
+const poll = require("./routes/poll")
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/links", links(db));//connect link.js to endpoint /api/links
+app.use("/api/poll", poll(db))
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -58,8 +61,8 @@ app.get("/links", (req, res) => {
   res.render("links");
 });
 
-app.get("/poll/:id", (req, res) => {
-  res.render("links");
+app.get("/poll", function(req, res) {
+  res.sendFile(path.join(__dirname + '/views/poll.html'))
 });
 
 app.get("/result/:adminid", (req, res) => {
