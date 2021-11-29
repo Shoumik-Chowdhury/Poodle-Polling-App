@@ -5,19 +5,19 @@ module.exports =  (db) => {
   router.get("/:adminid", (req, res) => {
     let values = [req.params["adminid"]];
     db.
-      query(`SELECT * FROM option_results
+      query(`SELECT option_name, option_value, title, email FROM option_results
+            JOIN polls ON poll_id = polls.id
             WHERE poll_id = $1`, values)
       .then(response => {
-        let xVal = [];
-        let yVal = [];
+        let result = [["Options", "Votes"]];
         for (let val of response.rows) {
-          xVal.push(val.option_name);
-          yVal.push(val.option_value);
+          result.push([val.option_name, val.option_value]);
         }
-        res.json({xVal, yVal});
-        // res.render('result', { xVal, yVal })
+        let title = response.rows[0].title;
+        let email = response.rows[0].email;
+        res.render('result', {result, title, email});
       })
-      .catch();
+      .catch((err) => err);
   });
   return router;
 }
