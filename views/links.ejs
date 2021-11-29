@@ -6,12 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Your Link</title>
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
 
 <body>
 
   <h2>Create Your Link</h2>
-  <form method="POST" action="/api/links">
+  <form method="POST" action="/api/links" id="poll-form">
     <div>
       <label for="email">Enter your email</label><br>
       <input type="email" name="email">
@@ -38,10 +41,15 @@
       <label for="option">Option 8: </label><input type="text" name="option8"><br>
 
     </div>
-    <button>Create a link!</button>
+    <!-- <button id="give-links">Create a link!</button> -->
+    <input type="submit" value="create a link">
 
-    <p>--THIS WILL BE A LINK--</p>
+
   </form>
+  <ul id="links">
+
+  </ul>
+
 </body>
 
 </html>

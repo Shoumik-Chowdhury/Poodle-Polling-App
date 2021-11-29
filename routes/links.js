@@ -55,7 +55,10 @@ module.exports = (db) => {//passed to server.js
 
               )
             })
+            res.send(link1admin)
           })
+        ////////////////trying something
+
       })
 
       .catch(err => {
