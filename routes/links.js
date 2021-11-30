@@ -4,9 +4,15 @@
  *   these routes are mounted onto /users
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
+require("dotenv").config();
 
 const express = require('express');
 const router = express.Router();
+const mailgunParams = require("../lib/mailgun.js");
+const mailgun = require("mailgun-js");
+
+
+const mg = mailgun(mailgunParams);
 
 
 module.exports = (db) => {//passed to server.js
@@ -54,6 +60,22 @@ module.exports = (db) => {//passed to server.js
                 `, [result.rows[0]["id"], option, 0]
 
               )
+                .then(() => {
+                  //to ?? security
+                  const data = {
+                    from: 'Example <EMAIL@EMAIL>',
+                    to: 'EMAIL@EMAIL',
+                    subject: 'Hello world',
+                    text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
+                  };
+                  mg.messages().send(data, function(error, body) {
+                    if (error) {
+                      console.log(error);
+                    }
+                    console.log(body);
+                  });
+
+                })
             })
             res.json({ link1admin, link2everyone })
           })
