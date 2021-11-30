@@ -8,10 +8,12 @@ $(document).ready(function() {
     //takes the information from a form and transforms it into a string
     const formInfo = $(this).serialize();
 
+
     //form submission is handled here
     $.post("/api/links", formInfo)
       .then((res) => {
         console.log(res)
+
         const li = `<li>${res}</li>`
         $("#links").append(li);
 
