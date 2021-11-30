@@ -16,10 +16,7 @@ $(document).ready(function() {
       }]
   };
 
-  // Sample data, eventually will come from database.
-  let object = optionObject
-
-  object.forEach(choice => {
+  optionObject.forEach(choice => {
     json.elements[0]["choices"].push(choice.option_name);
   });
 
@@ -31,7 +28,7 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         url: "http://localhost:8080/api/poll",
-        data: {rank: sender.data, optionEntry: object}
+        data: {rank: sender.data, optionEntry: optionObject}
       });
 
       document
