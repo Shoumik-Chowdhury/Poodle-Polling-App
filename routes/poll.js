@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bodyParser = require("body-parser");
-router.use(bodyParser.urlencoded({extended: true}));
 
 module.exports = (db) => {//passed to server.js
   return router.post("/", (req, res) => {
@@ -14,17 +12,17 @@ module.exports = (db) => {//passed to server.js
         if (element.option_name === rank) {
           element.option_value = parseInt(element.option_value);
           element.option_value += pointCount;
-          pointCount -= 1
+          pointCount -= 1;
         }
       });
-    };
+    }
 
     optionArray.forEach(element => {
       db.query(`
       UPDATE option_results
       SET option_value = $1
       WHERE id = $2;
-      `, [element.option_value, element.id])
+      `, [element.option_value, element.id]);
     });
 
   });
