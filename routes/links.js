@@ -55,7 +55,7 @@ module.exports = (db) => {//passed to server.js
 
               )
             })
-            res.send(link1admin)
+            res.json({ link1admin, link2everyone })
           })
         ////////////////trying something
 

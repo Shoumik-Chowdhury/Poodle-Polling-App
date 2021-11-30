@@ -14,12 +14,11 @@ $(document).ready(function() {
       .then((res) => {
         console.log(res)
 
-        const li = `<li>${res}</li>`
+        const li = `<li>${res.link1admin}</li><li>${res.link2everyone}</li>`
         $("#links").append(li);
 
         //handles reponse from the server
         //res.send from links.js
-        console.log(res);
       })
       .catch((error) => {
         console.log(error);
