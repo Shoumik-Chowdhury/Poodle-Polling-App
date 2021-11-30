@@ -17,9 +17,9 @@ $(document).ready(function() {
   };
 
   // Sample data, eventually will come from database.
-  const thing = [{id: 1, poll_id: 1, option_name: "Hiking", option_value: 11}, {id: 2, poll_id: 1, option_name: "Biking", option_value: 6}, {id: 3, poll_id: 1, option_name: "Go Karting", option_value: 15}, {id: 4, poll_id: 1, option_name: "Organized Crime", option_value: 1}];
+  let object = optionObject
 
-  thing.forEach(choice => {
+  object.forEach(choice => {
     json.elements[0]["choices"].push(choice.option_name);
   });
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         url: "http://localhost:8080/api/poll",
-        data: {rank: sender.data, optionEntry: thing}
+        data: {rank: sender.data, optionEntry: object}
       });
 
       document

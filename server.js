@@ -65,9 +65,9 @@ app.get("/links", (req, res) => {
   res.render("links");
 });
 
-app.get("/poll", function(req, res) {
-  res.sendFile(path.join(__dirname + '/views/poll.html'))
-});
+// app.get("/poll", function(req, res) {
+//   res.render("poll")
+// });
 
 // app.get("/result/:adminid", (req, res) => {
 //   res.render("links");
