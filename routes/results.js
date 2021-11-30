@@ -7,7 +7,7 @@ module.exports =  (db) => {
     db.
       query(`SELECT option_name, option_value, title, email FROM option_results
             JOIN polls ON poll_id = polls.id
-            WHERE poll_id = $1`, values)
+            WHERE administrative_link = $1`, values)
       .then(response => {
         let result = [["Options", "Votes"]];
         for (let val of response.rows) {

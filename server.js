@@ -41,6 +41,7 @@ const widgetsRoutes = require("./routes/widgets");
 const links = require("./routes/links");//fetching from link.js
 const poll = require("./routes/poll")
 const resultRoutes = require("./routes/results");
+const pollRoutes = require("./routes/pollRoute");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -49,6 +50,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/links", links(db));//connect link.js to endpoint /api/links
 app.use("/api/poll", poll(db))
 app.use("/results", resultRoutes(db));
+app.use("/polls", pollRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
