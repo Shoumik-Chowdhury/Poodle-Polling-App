@@ -14,7 +14,7 @@ $(document).ready(function() {
       .then((res) => {
         console.log(res)
 
-        const li = `<li>Follow the result on this page: localhost:8080/results/${res.link1admin}</li><li>Share this link with your friends: localhost:8080/polls/${res.link2everyone}</li>`
+        const li = `<li>Follow the result <a href="/results/${res.link1admin}">here</a></li><li>Share <a href="/polls/${res.link2everyone}">this link</a> with your friends.</li>`
         $("#links").append(li);
 
         //handles reponse from the server

@@ -12,16 +12,19 @@
 </head>
 
 <body>
+  <header>
+    <%- include("partials/_header"); %>
+  </header>
 
   <h2>Create Your Link</h2>
   <form method="POST" action="/api/links" id="poll-form">
     <div>
       <label for="email">Enter your email</label><br>
-      <input type="email" name="email">
+      <input type="email" name="email" required>
     </div>
     <div>
       <label for="title">Enter a title</label><br>
-      <input type="text" name="title" id="title">
+      <input type="text" name="title" id="title" required>
     </div>
 
 
@@ -31,7 +34,7 @@
     </div>
 
     <div class="option">
-      <label for="option">Option 1: </label><input type="text" name="option1"><br>
+      <label for="option">Option 1: </label><input type="text" name="option1" required><br>
       <label for="option">Option 2: </label><input type="text" name="option2"><br>
       <label for="option">Option 3: </label><input type="text" name="option3"><br>
       <label for="option">Option 4: </label><input type="text" name="option4"><br>
