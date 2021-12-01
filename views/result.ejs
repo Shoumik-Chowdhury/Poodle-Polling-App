@@ -17,9 +17,22 @@
   <!-- External scripts -->
   <script src="/scripts/poll_results.js"></script>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
   <title>Results</title>
 </head>
 <body>
+  <header>
+    <%- include("partials/_header"); %>
+  </header>
   <h2>Result</h2>
   <div id="myChart" style="max-width:700px; height:400px"></div>
 </body>

@@ -1,5 +1,10 @@
-body {
+// body {
+
+// }
+
+.container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -17,8 +22,12 @@ body {
 }
 
 .index {
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("../image/Poodle.jpg");
   background-size:     cover;
   background-repeat:   no-repeat;
@@ -50,7 +59,8 @@ body {
   }
 
   #wobble {
-    font-size: 3em;
+    font-size: 5em;
+    font-family: 'Bree Serif', serif;
     color: #89B0AE;
   }
 }
