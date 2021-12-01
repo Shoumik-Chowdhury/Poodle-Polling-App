@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>A question for drag and drop ranking. Allows respondents to rank items against each other by placing them in order of preference. Is appropriate for short lists (e.g. 5-7 items). Is optimized for use with keyboard (Tab, Shift-Tab, and Up/Down arrow keys) and under mobile devices., jQuery Survey Library Example</title><meta name="viewport" content="width=device-width"/>
+        <title>Decision Maker Poll</title><meta name="viewport" content="width=device-width"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://unpkg.com/jquery"></script>
         <script src="https://unpkg.com/survey-jquery@1.8.79/survey.jquery.min.js"></script>
         <script type="text/javascript" src="/scripts/poll.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="./index.css"> -->
+        <link rel="stylesheet" href="/styles/poll.css">
+        <link rel="stylesheet" href="/styles/main.css">
     </head>
     <script>
       let optionObject = <%- JSON.stringify(options) %>;
     </script>
     <body>
+      <div class="container">
         <div id="surveyElement" style="display:inline-block;width:100%;"></div>
         <div id="surveyResult"></div>
+      </div>
     </body>
 </html>
