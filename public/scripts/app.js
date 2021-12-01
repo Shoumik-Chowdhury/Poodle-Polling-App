@@ -27,7 +27,10 @@ $(document).ready(function() {
       .then((res) => {
         console.log(res)
 
-        const li = `<li>${res.link1admin}</li><li>${res.link2everyone}</li>`
+        $("#poll-form").hide(1000);
+        const h3 = `Thank you for filling out the form! Check your email for updates!`;
+        $("#thanks-message").append(h3);
+        const li = `<li>Follow the result <a target="_blank" href="/results/${res.link1admin}">here</a></li><li>Share <a target="_blank" href="/polls/${res.link2everyone}">this link</a> with your friends.</li>`
         $("#links").append(li);
 
         //handles reponse from the server

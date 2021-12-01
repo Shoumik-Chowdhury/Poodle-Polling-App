@@ -60,23 +60,21 @@ module.exports = (db) => {//passed to server.js
                 `, [result.rows[0]["id"], option, 0]
 
               )
-                .then(() => {
-                  //to ?? security
-                  const data = {
-                    from: 'John Cena <anonymous.129501@gmail.com>',
-                    to: 'anonymous.129501@gmail.com',
-                    subject: 'Hello world',
-                    text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
-                  };
-                  mg.messages().send(data, function(error, body) {
-                    if (error) {
-                      console.log(error);
-                    }
-                    console.log(body);
-                  });
-
-                })
             })
+            //to ?? security
+            const data = {
+              from: 'Example <EMAIL@EMAIL>',
+              to: 'EMAIL@EMAIL',
+              subject: 'Hello world',
+              text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
+            };
+            mg.messages().send(data, function(error, body) {
+              if (error) {
+                console.log(error);
+              }
+              console.log(body);
+            });
+
             res.json({ link1admin, link2everyone })
           })
         ////////////////trying something

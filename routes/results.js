@@ -1,7 +1,7 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
-module.exports =  (db) => {
+module.exports = (db) => {
   router.get("/:adminid", (req, res) => {
     let values = [req.params["adminid"]];
     db.
@@ -15,7 +15,7 @@ module.exports =  (db) => {
         }
         let title = response.rows[0].title;
         let email = response.rows[0].email;
-        res.render('result', {result, title, email});
+        res.render('result', { result, title, email });
       })
       .catch((err) => err);
   });
