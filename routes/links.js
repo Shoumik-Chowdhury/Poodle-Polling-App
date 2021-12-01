@@ -32,7 +32,7 @@ module.exports = (db) => {//passed to server.js
     db.query(
       `
     INSERT INTO polls (
-      email, title, description, administrative_link, submission_link) 
+      email, title, description, administrative_link, submission_link)
       VALUES (
       $1, $2, $3, $4, $5)
       RETURNING *;
@@ -53,7 +53,7 @@ module.exports = (db) => {//passed to server.js
               db.query(
                 `
               INSERT INTO option_results (
-                poll_id, option_name, option_value) 
+                poll_id, option_name, option_value)
                 VALUES (
                 $1, $2, $3)
                 RETURNING *;
@@ -63,8 +63,8 @@ module.exports = (db) => {//passed to server.js
                 .then(() => {
                   //to ?? security
                   const data = {
-                    from: 'Example <EMAIL@EMAIL>',
-                    to: 'EMAIL@EMAIL',
+                    from: 'John Cena <anonymous.129501@gmail.com>',
+                    to: 'anonymous.129501@gmail.com',
                     subject: 'Hello world',
                     text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
                   };
