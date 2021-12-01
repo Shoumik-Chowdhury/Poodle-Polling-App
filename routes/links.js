@@ -32,7 +32,7 @@ module.exports = (db) => {//passed to server.js
     db.query(
       `
     INSERT INTO polls (
-      email, title, description, administrative_link, submission_link) 
+      email, title, description, administrative_link, submission_link)
       VALUES (
       $1, $2, $3, $4, $5)
       RETURNING *;
@@ -53,30 +53,29 @@ module.exports = (db) => {//passed to server.js
               db.query(
                 `
               INSERT INTO option_results (
-                poll_id, option_name, option_value) 
+                poll_id, option_name, option_value)
                 VALUES (
                 $1, $2, $3)
                 RETURNING *;
                 `, [result.rows[0]["id"], option, 0]
 
               )
-                .then(() => {
-                  //to ?? security
-                  const data = {
-                    from: 'Example <EMAIL@EMAIL>',
-                    to: 'EMAIL@EMAIL',
-                    subject: 'Hello world',
-                    text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
-                  };
-                  mg.messages().send(data, function(error, body) {
-                    if (error) {
-                      console.log(error);
-                    }
-                    console.log(body);
-                  });
 
-                })
             })
+              //to ?? security
+              const data = {
+                from: 'Example <EMAIL@EMAIL>',
+                to: 'EMAIL@EMAIL',
+                subject: 'Hello world',
+                text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
+              };
+              mg.messages().send(data, function(error, body) {
+                if (error) {
+                  console.log(error);
+                }
+                console.log(body);
+              });
+
             res.json({ link1admin, link2everyone })
           })
         ////////////////trying something
