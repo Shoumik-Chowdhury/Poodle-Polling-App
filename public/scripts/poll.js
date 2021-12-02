@@ -16,6 +16,8 @@ $(document).ready(function() {
       }]
   };
 
+  const $dogGif = $('<img id="dog" src="/image/dog.gif">');
+
   optionObject.forEach(choice => {
     json.elements[0]["choices"].push(choice.option_name);
   });
@@ -34,6 +36,7 @@ $(document).ready(function() {
       document
         $("#title").hide()
         $("#description").hide()
+        $(".container").append($dogGif)
         .querySelector('#surveyResult')
     });
 
