@@ -10,6 +10,7 @@ html {
 h2 {
   text-align: center;
   color: #555b6e;
+  font-family: Nunito;
 }
 
 .content {
@@ -20,12 +21,43 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
+  .column1 {
+    padding: 2rem;
+  }
 
+  .column2 {
+    padding: 2rem;
+  }
+
+  input {
+    width: 18rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    border-color: transparent;
+  }
+
+  textarea {
+    width: 18rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    border-color: transparent;
+  }
+
+  #submit {
+    background-color: #DDA15E;
+    border-color: #606C38;
+    width: 10rem;
+
+  }
   
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 600px) {
   .content {
+    display: flex;
+  }
+  .columns {
     display: flex;
     flex-direction: row;
   }

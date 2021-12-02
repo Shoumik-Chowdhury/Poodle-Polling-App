@@ -7,6 +7,17 @@ nav {
   .navbar-brand {
     font-size: 3rem;
     color: #FEFAE0;
+    padding-left: 2rem;
+  }
+
+  .navbar-nav {
+    // border-color: #283618;
+    padding: 0 2rem 0 3rem;
+  }
+
+  .nav-item {
+    font-family: Nunito;
+    color: #283618;
   }
 }
 
