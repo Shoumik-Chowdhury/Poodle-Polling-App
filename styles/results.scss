@@ -1,0 +1,12 @@
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+
+  #myChart {
+    align-self: center;
+    width: auto;
+  }
+}
