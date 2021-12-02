@@ -16,11 +16,10 @@ module.exports = (db) => {
     const allOptions = [req.body.option1, req.body.option2, req.body.option3, req.body.option4, req.body.option5, req.body.option6, req.body.option7, req.body.option8];
     const arrayOfOptions = allOptions.filter((option) => option.length > 0);
 
-    //HELPER FUNCTION
     const generateRandomString = () => {
       return Math.floor((1 + Math.random()) * 0x1000000).toString(16).substring(1);
     };
-    ////////////////
+
     const link1admin = generateRandomString();
     const link2everyone = generateRandomString();
 
@@ -61,7 +60,7 @@ module.exports = (db) => {
               from: 'Example <EMAIL@EMAIL>',
               to: 'EMAIL@EMAIL',
               subject: 'Hello world',
-              text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
+              text: `Here are your links!\n Share with your friends: localhost:8080/polls/${link2everyone} \n Use to track the results: localhost:8080/results/${link1admin}`
             };
             mg.messages().send(data, function(error, body) {
               if (error) {
