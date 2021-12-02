@@ -1,15 +1,26 @@
+body {
+  background-color: #FEFAE0;
+}
+
+nav {
+  height: 98px;
+}
+
 .btn-green {
   color: #555B6E;
-  border-radius: 3px;
 }
 
 .panel-footer {
   border: none;
   text-align: left;
   width: 10%;
-  background: rgb(163, 208, 219);
+  background-color: #FEFAE0;
 }
 
 .sv-ranking {
-  color: #555B6E;
+  color: #000000;
+}
+
+.sv-string-viewer {
+  font-size: 2em;
 }

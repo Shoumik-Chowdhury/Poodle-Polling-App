@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<<<<<<< HEAD
 <head>
   <title>Decision Maker Poll</title>
   <meta name="viewport" content="width=device-width" />
@@ -35,3 +36,27 @@
 </body>
 
 </html>
+=======
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    </head>
+    <script>
+      let optionObject = <%- JSON.stringify(options) %>;
+    </script>
+    <header>
+      <%- include("partials/_header"); %>
+    </header>
+    <body>
+      <div class="container">
+        <h2><%= options[0]["title"] %></h2>
+        <h3><%= options[0]["description"] %></h3>
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+      </div>
+    </body>
+</html>
+>>>>>>> 7a2dbb9d95eedf0ca87d343c0c0420c66cf3dc61
