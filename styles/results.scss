@@ -4,9 +4,28 @@
   flex-direction: column;
   align-content: center;
   width: 100%;
+  background-color: #FEFAE0;
+  height: 100vh;
+
+  h2 {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.5em;
+  }
 
   #myChart {
     align-self: center;
-    width: auto;
+  }
+
+  #doughnut {
+    align-self: center;
+    height: 400px;
+    width: 80%;
+
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .result #doughnut {
+    width: 50%;
   }
 }
