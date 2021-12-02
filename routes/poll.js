@@ -44,9 +44,9 @@ module.exports = (db) => {//passed to server.js
 
         const data = {
           from: 'poodleteam@poodle.ca',
-          to: 'EMAIL@EMAIL',
+          to: 'nyoshida44@gmail.com',
           subject: 'Submission Confirmation - Poodle',
-          text: `One of your friends made a submission! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
+          text: `One of your friends made a submission! \n Share with your friends: localhost:8080/polls/${link2everyone} \n Use to track the results: localhost:8080/results/${link1admin}`
         };
         mg.messages().send(data, function(error, body) {
           if (error) {
