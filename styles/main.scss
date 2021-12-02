@@ -1,6 +1,3 @@
-// body {
-
-// }
 
 .container {
   display: flex;
@@ -26,7 +23,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-image: url("../image/Poodle.jpg");
   background-size:     cover;
@@ -37,7 +33,7 @@
     transition: all 0.5s ease;
     color: #89B0AE;
     border: 4px solid #464B5B;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Nunito', sans-serif;
     text-transform: uppercase;
     text-align: center;
     line-height: 1;
@@ -45,6 +41,7 @@
     background-color: transparent;
     padding: 10px;
     margin: 0.3rem;
+    margin-top: 10%;
     outline: none;
     border-radius: 15px;
   }
@@ -54,13 +51,73 @@
     background-color: #BEE3DB;
   }
 
-  div {
-    font-size: 2em;
-  }
-
   #wobble {
-    font-size: 5em;
+    margin-top: 15%;
+    font-size: 10em;
     font-family: 'Bree Serif', serif;
-    color: #89B0AE;
+    color: #FEFAE0;
   }
+}
+
+.wordCarousel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 8rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 4em;
+  color: #3B4222;
+  div {
+      overflow: hidden;
+      position: relative;
+      float: right;
+      height: 65px;
+      margin-top: -10px;
+      li {
+          font-family: 'Bree Serif', serif;
+          color: #FEFAE0;
+          padding: 0 10px;
+          height: 45px;
+          margin-bottom: 45px;
+          display: block;
+      }
+  }
+}
+
+.flip2 { animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip3 { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip4 { animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+
+@keyframes flip2 {
+  0% { margin-top: -180px; }
+  5% { margin-top: -90px;  }
+  50% { margin-top: -90px; }
+  55% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
+}
+
+@keyframes flip3 {
+  0% { margin-top: -270px; }
+  5% { margin-top: -180px; }
+  33% { margin-top: -180px; }
+  38% { margin-top: -90px; }
+  66% { margin-top: -90px; }
+  71% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
+}
+
+@keyframes flip4 {
+  0% { margin-top: -360px; }
+  5% { margin-top: -270px; }
+  25% { margin-top: -270px; }
+  30% { margin-top: -180px; }
+  50% { margin-top: -180px; }
+  55% { margin-top: -90px; }
+  75% { margin-top: -90px; }
+  80% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
 }
