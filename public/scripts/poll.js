@@ -15,6 +15,7 @@ $(document).ready(function() {
         ]
       }]
   };
+  console.log(json)
 
   optionObject.forEach(choice => {
     json.elements[0]["choices"].push(choice.option_name);
@@ -28,13 +29,13 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         url: "http://localhost:8080/api/poll",
-        data: {rank: sender.data, optionEntry: optionObject}
+        data: { rank: sender.data, optionEntry: optionObject }
       });
 
       document
         .querySelector('#surveyResult')
     });
 
-  $("#surveyElement").Survey({model: survey});
+  $("#surveyElement").Survey({ model: survey });
 
 });
