@@ -4,7 +4,8 @@ body,
 html {
   margin: 0;
   background-color: #fefae0;
-  
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -14,6 +15,7 @@ h2 {
 }
 
 .content {
+  align-self: center;
   background-color: #bee3db;
   width: fit-content;
   padding: 1rem;
@@ -21,7 +23,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   .column1 {
     padding: 2rem;
   }
@@ -50,7 +52,7 @@ h2 {
     width: 10rem;
 
   }
-  
+
 }
 h3 {
   padding: 1rem;
