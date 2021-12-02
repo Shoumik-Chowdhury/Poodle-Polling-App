@@ -40,13 +40,13 @@ module.exports = (db) => {//passed to server.js
 
       .then((response) => {
         let link1admin = response.rows[0].administrative_link
-        let link2everyone = response.rows[0].submmission_link
+        let link2everyone = response.rows[0].submission_link
 
         const data = {
-          from: 'Example <EMAIL@EMAIL>',
-          to: 'EMAIL@EMAIL',
-          subject: 'Hello world',
-          text: `Here are your links! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
+          from: 'poodleteam@poodle.ca',
+          to: 'nyoshida44@gmail.com',
+          subject: 'Submission Confirmation - Poodle',
+          text: `One of your friends made a submission! Share with your friends: localhost:8080/polls/${link2everyone} Use to track the results: localhost:8080/results/${link1admin}`
         };
         mg.messages().send(data, function(error, body) {
           if (error) {
