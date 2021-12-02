@@ -44,7 +44,7 @@ module.exports = (db) => {//passed to server.js
 
         const data = {
           from: 'poodleteam@poodle.ca',
-          to: 'nyoshida44@gmail.com',
+          to: 'email@EMAIL.ca',
           subject: 'Submission Confirmation - Poodle',
           text: `One of your friends made a submission! \n Share with your friends: localhost:8080/polls/${link2everyone} \n Use to track the results: localhost:8080/results/${link1admin}`
         };
