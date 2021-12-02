@@ -3,7 +3,7 @@
 body,
 html {
   margin: 0;
-  background-color: #FAF9F9;
+  background-color: #fefae0;
   
 }
 
@@ -51,6 +51,15 @@ h2 {
 
   }
   
+}
+h3 {
+  padding: 1rem;
+  font-family: Nunito;
+}
+
+#links {
+  list-style-type: none;
+  font-family: Nunito;
 }
 
 @media only screen and (min-width: 600px) {

@@ -65,19 +65,6 @@ app.get("/links", (req, res) => {
   res.render("links");
 });
 
-// app.get("/poll", function(req, res) {
-//   res.render("poll")
-// });
-
-// app.get("/result/:adminid", (req, res) => {
-//   res.render("links");
-// });
-
-
-// app.post("/links", (req, res) => {
-//   console.log(req.body)
-// })
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

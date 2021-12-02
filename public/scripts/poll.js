@@ -15,6 +15,7 @@ $(document).ready(function() {
         ]
       }]
   };
+  console.log(json)
 
   const $dogGif = $('<img id="dog" src="/image/dog.gif">');
 
@@ -30,7 +31,7 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         url: "http://localhost:8080/api/poll",
-        data: {rank: sender.data, optionEntry: optionObject}
+        data: { rank: sender.data, optionEntry: optionObject }
       });
 
       document
@@ -40,6 +41,6 @@ $(document).ready(function() {
         .querySelector('#surveyResult')
     });
 
-  $("#surveyElement").Survey({model: survey});
+  $("#surveyElement").Survey({ model: survey });
 
 });
