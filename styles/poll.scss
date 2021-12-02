@@ -1,5 +1,13 @@
 body {
   background-color: #FEFAE0;
+  display: flex;
+  flex-direction: column;
+
+  #voter-name {
+    align-self: center;
+  }
+
+
 }
 
 h3 {
@@ -27,4 +35,5 @@ h3 {
 
 #dog {
   width: 80%;
+  align-self: center;
 }

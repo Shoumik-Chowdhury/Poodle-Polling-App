@@ -20,8 +20,24 @@ $(document).ready(function() {
   const $dogGif = $('<img id="dog" src="/image/dog.gif">');
 
   optionObject.forEach(choice => {
-    json.elements[0]["choices"].push(choice.option_name);
+    if (choice.option_description) {
+      json.elements[0]["choices"].push(`${choice.option_name}: ${choice.option_description}`);
+    } else {
+      json.elements[0]["choices"].push(choice.option_name);
+    }
   });
+
+  ///////////
+  const showContainer = function() {
+    $("#submit-name").click(() => {
+      $(".container").show(1000);
+      $("#voter-name").hide(1000);
+    })
+  }
+
+  showContainer();
+
+  ///////////
 
   window.survey = new Survey.Model(json);
 
@@ -35,9 +51,9 @@ $(document).ready(function() {
       });
 
       document
-        $("#title").hide()
-        $("#description").hide()
-        $(".container").append($dogGif)
+      $("#title").hide()
+      $("#description").hide()
+      $(".container").append($dogGif)
         .querySelector('#surveyResult')
     });
 

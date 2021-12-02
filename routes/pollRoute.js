@@ -1,7 +1,7 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
-module.exports =  (db) => {
+module.exports = (db) => {
   router.get("/:pollid", (req, res) => {
     let values = [req.params["pollid"]];
     db.
@@ -11,7 +11,7 @@ module.exports =  (db) => {
             WHERE submission_link = $1`, values)
       .then(response => {
         const options = response.rows
-        res.render('poll', {options});
+        res.render('poll', { options });
       })
       .catch((err) => err);
   });
