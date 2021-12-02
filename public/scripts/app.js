@@ -17,7 +17,7 @@ $(document).ready(function() {
         $("#poll-form").hide(1000);
         const h3 = `Thank you for filling out the form! Check your email for updates!`;
         $("#thanks-message").append(h3);
-        const li = `<li>Follow the result <a target="_blank" href="/results/${res.link1admin}">here</a></li><li>Share <a target="_blank" href="/polls/${res.link2everyone}">this link</a> with your friends.</li>`
+        const li = `<li>Follow the result <a target="_blank" href="/results/${res.link1admin}">here</a>.</li><li>Share <a target="_blank" href="/polls/${res.link2everyone}">this link</a> with your friends.</li>`
         $("#links").append(li);
 
         //handles reponse from the server
