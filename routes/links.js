@@ -1,9 +1,5 @@
-/*
- * All routes for Users are defined here
- * Since this file is loaded in server.js into api/users,
- *   these routes are mounted onto /users
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
+//All routes for Users are defined here
+
 require("dotenv").config();
 
 const express = require('express');
@@ -11,11 +7,10 @@ const router = express.Router();
 const mailgunParams = require("../lib/mailgun.js");
 const mailgun = require("mailgun-js");
 
-
 const mg = mailgun(mailgunParams);
 
-
-module.exports = (db) => {//passed to server.js
+//passed to server.js
+module.exports = (db) => {
 
   return router.post("/", (req, res) => {
     const allOptions = [req.body.option1, req.body.option2, req.body.option3, req.body.option4, req.body.option5, req.body.option6, req.body.option7, req.body.option8];
@@ -59,9 +54,9 @@ module.exports = (db) => {//passed to server.js
                 RETURNING *;
                 `, [result.rows[0]["id"], option, 0]
 
-              )
-            })
-            //to ?? security
+              );
+            });
+
             const data = {
               from: 'Example <EMAIL@EMAIL>',
               to: 'EMAIL@EMAIL',
@@ -75,9 +70,8 @@ module.exports = (db) => {//passed to server.js
               console.log(body);
             });
 
-            res.json({ link1admin, link2everyone })
-          })
-        ////////////////trying something
+            res.json({ link1admin, link2everyone });
+          });
 
       })
 
