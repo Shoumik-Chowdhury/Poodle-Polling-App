@@ -21,8 +21,8 @@
 
   button {
     transition: all 0.5s ease;
-    color: #89B0AE;
-    border: 4px solid #464B5B;
+    color: #FEFAE0;
+    border: 4px solid #343B1F;
     font-family: 'Nunito', sans-serif;
     text-transform: uppercase;
     text-align: center;
@@ -31,18 +31,20 @@
     background-color: transparent;
     padding: 10px;
     margin: 0.3rem;
-    margin-top: 10%;
+    margin-top: 100px;
     outline: none;
     border-radius: 15px;
+    height: 3em;
+    width: 8em;
   }
 
   button:hover {
-    color: #001F3F;
-    background-color: #BEE3DB;
+    color: #343B1F;
+    background-color: #EECE9F;
   }
 
   #wobble {
-    margin-top: 15%;
+    margin-top: 80px;
     font-size: 10em;
     font-family: 'Bree Serif', serif;
     color: #FEFAE0;
@@ -53,7 +55,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 80px;
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 4em;
@@ -75,9 +77,9 @@
   }
 }
 
-.flip2 { animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
-.flip3 { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
-.flip4 { animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip2 { animation: flip2 4.5s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip3 { animation: flip3 5s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip4 { animation: flip4 5.5s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
 
 @keyframes flip2 {
   0% { margin-top: -180px; }
