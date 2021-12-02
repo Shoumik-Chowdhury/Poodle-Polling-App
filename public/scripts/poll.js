@@ -32,6 +32,8 @@ $(document).ready(function() {
       });
 
       document
+        $("#title").hide()
+        $("#description").hide()
         .querySelector('#surveyResult')
     });
 
