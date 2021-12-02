@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- External HTML -->
-  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.1/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <!-- Global variables -->
   <script>
-    let result = <%- JSON.stringify(result) %>;
+    let xVal = <%- JSON.stringify(xVal) %>;
+    let yVal = <%- JSON.stringify(yVal) %>;
     let title = <%- JSON.stringify(title) %>;
     let email = <%- JSON.stringify(email) %>;
   </script>
@@ -23,18 +27,20 @@
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="stylesheet" href="/styles/results.css">
 
-  <!-- google fonts -->
+  <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 
   <title>Results</title>
 </head>
-<body class="result">
+<body>
   <header>
     <%- include("partials/_header"); %>
   </header>
-  <h2>Poll count</h2>
-  <div id="myChart" style="max-width:700px; height:400px"></div>
+  <div class="result">
+    <h2>Poll count</h2>
+    <div id="doughnut"><canvas id="myChart"></canvas></div>
+  </div>
 </body>
 </html>

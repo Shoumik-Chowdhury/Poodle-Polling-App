@@ -9,13 +9,15 @@ module.exports = (db) => {
             JOIN polls ON poll_id = polls.id
             WHERE administrative_link = $1`, values)
       .then(response => {
-        let result = [["Options", "Votes"]];
+        let xVal = [];
+        let yVal = [];
         for (let val of response.rows) {
-          result.push([val.option_name, val.option_value]);
+          xVal.push([val.option_name]);
+          yVal.push([val.option_value]);
         }
         let title = response.rows[0].title;
         let email = response.rows[0].email;
-        res.render('result', { result, title, email });
+        res.render('result', { xVal, yVal, title, email });
       })
       .catch((err) => err);
   });
