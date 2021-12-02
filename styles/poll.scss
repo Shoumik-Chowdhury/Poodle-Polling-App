@@ -1,5 +1,9 @@
 body {
-  background-color: #DDA15E;
+  background-color: #FEFAE0;
+}
+
+nav {
+  height: 98px;
 }
 
 .btn-green {
@@ -10,9 +14,13 @@ body {
   border: none;
   text-align: left;
   width: 10%;
-  background-color: #DDA15E;
+  background-color: #FEFAE0;
 }
 
 .sv-ranking {
   color: #000000;
+}
+
+.sv-string-viewer {
+  font-size: 2em;
 }
