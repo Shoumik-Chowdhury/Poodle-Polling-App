@@ -3,7 +3,7 @@ $(document).ready(() => {
   Chart.register(ChartDataLabels);
   var xValues = xVal;
   var yValues = yVal;
-  var barColors = ['#CB4335', '#1F618D', '#F1C40F', '#27AE60', '#884EA0', '#D35400'];
+  var barColors = ['#CB4335', '#1F618D', '#F1C40F', '#27AE60', '#884EA0', '#D35400', '#FFA500', '#FFC0CB'];
 
   new Chart("myChart", {
     type: "doughnut",
