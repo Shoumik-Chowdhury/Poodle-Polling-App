@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Decision Maker Poll</title><meta name="viewport" content="width=device-width"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://unpkg.com/jquery"></script>
-        <script src="https://unpkg.com/survey-jquery@1.8.79/survey.jquery.min.js"></script>
-        <script type="text/javascript" src="/scripts/poll.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-        <!-- CSS -->
-        <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-        <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-        <link rel="stylesheet" href="/styles/poll.css">
-        <link rel="stylesheet" href="/styles/main.css">
 
-        <!-- google fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    </head>
-    <script>
-      let optionObject = <%- JSON.stringify(options) %>;
-    </script>
-    <header>
-      <%- include("partials/_header"); %>
-    </header>
-    <body>
-      <div class="container">
-        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
-        <div id="surveyResult"></div>
-      </div>
-    </body>
+<head>
+  <title>Decision Maker Poll</title>
+  <meta name="viewport" content="width=device-width" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/survey-jquery@1.8.79/survey.jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/poll.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/poll.css">
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<script>
+  let optionObject = <% - JSON.stringify(options) %>;
+</script>
+<header>
+  <%- include("partials/_header"); %>
+</header>
+
+<body>
+  <div class="container">
+    <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+    <div id="surveyResult"></div>
+  </div>
+</body>
+
 </html>
