@@ -29,6 +29,17 @@ Poodle! It's like Doodle, but without the copyright infringement.
   - It runs through each of the files, in order, and executes them against the database. 
   - Note: you will lose all newly created (test) data each time this is run, since the schema files will tend to `DROP` the tables and recreate them.
 
+
+## Final Product
+
+!["Create poll"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/create_poll.png)
+
+!["Main page"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/index_page.png)
+
+!["Ranking"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/ranking.png)
+
+!["Track results"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/results.png)
+
 ## Dependencies
 
 - Node 10.x or above
