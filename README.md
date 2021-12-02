@@ -32,9 +32,9 @@ Poodle! It's like Doodle, but without the copyright infringement.
 
 ## Final Product
 
-!["Create poll"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/create_poll.png)
-
 !["Main page"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/index_page.png)
+
+!["Create poll"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/create_poll.png)
 
 !["Ranking"](https://github.com/Shoumik-Chowdhury/midterm_project/blob/master/public/image/ranking.png)
 
