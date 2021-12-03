@@ -6,5 +6,6 @@ CREATE TABLE polls (
   title VARCHAR(255) NOT NULL,
   description TEXT,
   administrative_link VARCHAR(255),
-  submission_link VARCHAR(255)
+  submission_link VARCHAR(255),
+  name_required BOOLEAN NOT NULL
 );

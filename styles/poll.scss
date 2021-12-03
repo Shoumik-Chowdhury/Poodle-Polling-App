@@ -4,7 +4,18 @@ body {
   flex-direction: column;
 
   #voter-name {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     align-self: center;
+  }
+
+  #submit-name {
+    align-self: center;
+    background-color: #DDA15E;
+    border-color: #606C38;
+    width: 10rem;
   }
 
 
@@ -34,6 +45,6 @@ h3 {
 }
 
 #dog {
-  width: 80%;
+  width: 100%;
   align-self: center;
 }

@@ -31,11 +31,16 @@ $(document).ready(function() {
   const showContainer = function() {
     $("#submit-name").click(() => {
       $(".container").show(1000);
-      $("#voter-name").hide(1000);
+      $("#voter-name").hide();
     })
   }
 
-  showContainer();
+  if (optionObject[0].name_required) {
+    showContainer();
+  } else {
+    $(".container").show();
+    $("#voter-name").hide();
+  }
 
   ///////////
 
