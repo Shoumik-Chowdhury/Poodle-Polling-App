@@ -7,5 +7,5 @@ CREATE TABLE polls (
   description TEXT,
   administrative_link VARCHAR(255),
   submission_link VARCHAR(255),
-  name_required BOOLEAN NOT NULL
+  name_required BOOLEAN DEFAULT 'f'
 );
