@@ -36,7 +36,7 @@
   <form method="POST" action="/api/links" class="content" id="poll-form">
 
     <h2>Create Your Poll</h2>
-    
+
     <div class="columns">
 
       <div class="column1">
@@ -50,21 +50,21 @@
           <label for="title">Enter a title</label><br>
           <input type="text" name="title" id="title" required>
         </div>
-  
+
         <div>
           <label for="description">Add description</label><br>
           <textarea name="description" id="description" cols="30" rows="3"></textarea>
         </div>
-        <div>
-          <input type="checkbox" value="true" name="name_required"><p>Voter name required? </p>
-          
+        <div id="name-check">
+          <p>Voter name required? </p>
+          <input type="checkbox" id="checkbox" value="true" name="name_required">
         </div>
-  
+
       </div>
 
 
       <div class="column2">
-  
+
         <div class="option">
           <label for="option">Option 1: </label><input class="title" type="text" name="option1" required><input type="text" name="description1" placeholder="description"><br>
           <label for="option">Option 2: </label><input class="title" type="text" name="option2" required><input type="text" name="description2" placeholder="description"><br>
@@ -74,11 +74,11 @@
           <label for="option">Option 6: </label><input class="title" type="text" name="option6" placeholder="optional"><input type="text" name="description6" placeholder="description"><br>
           <label for="option">Option 7: </label><input class="title" type="text" name="option7" placeholder="optional"><input type="text" name="description7" placeholder="description"><br>
           <label for="option">Option 8: </label><input class="title" type="text" name="option8" placeholder="optional"><input type="text" name="description8" placeholder="description"><br>
-          
+
         </div>
-        
+
         <input type="submit" value="create a poll" id="submit">
-  
+
       </div>
 
     </div>

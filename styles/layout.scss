@@ -26,6 +26,16 @@ h2 {
 
   .column1 {
     padding: 2rem;
+
+    #name-check {
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+    }
+
+    #checkbox {
+      width: 2rem;
+    }
   }
 
   .column2 {
