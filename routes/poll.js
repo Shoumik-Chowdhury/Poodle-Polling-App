@@ -9,13 +9,13 @@ const mg = mailgun(mailgunParams);
 
 module.exports = (db) => {//passed to server.js
   return router.post("/", (req, res) => {
-
     const rankArray = req.body.rank.decision_maker;
     let optionArray = req.body.optionEntry;
     let pointCount = rankArray.length;
     for (const rank of rankArray) {
       optionArray.forEach(element => {
-        if (element.option_name === rank) {
+        let elementObject = element.option_name + ": " + element.option_description;
+        if (element.option_name === rank || elementObject === rank) {
           element.option_value = parseInt(element.option_value);
           element.option_value += pointCount;
           pointCount -= 1;
